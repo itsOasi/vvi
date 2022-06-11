@@ -1,6 +1,2 @@
-use super::common::{Base, DictEntry, Triple};
-
-pub mod Particles{
-
-}
-pub mod Physics{}
+use super::common::particles::{Body, Point, Shape};
+pub mod physics;

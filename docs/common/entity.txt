@@ -1,0 +1,3 @@
+An entity represents an active element in the simulation
+
+Entities point to a body object to be instantiated into the scene

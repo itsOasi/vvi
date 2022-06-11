@@ -1,5 +1,5 @@
 use crate::vvi::common::{Triple, DictEntry};
-use crate::vvi::quantum::Particles;
+use crate::vvi::common::particles::{Body, Shape, Point};
 pub struct Shader{
     // define shader classes
     classes: Vec<DictEntry<String>>
@@ -15,7 +15,7 @@ struct Cloud{
     shaders: Vec<DictEntry<Comp::Shader>>,
     textures: Vec<DictEntry<Comp::TexturePack>>, 
     active_cam: Option<String>,
-    bodies: Vec<Particles::Body>,
+    bodies: Vec<Body>,
 
 }
 // TODO: impl SimRunTime for cloud

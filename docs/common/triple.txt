@@ -1,0 +1,6 @@
+a triple represents a 3 axis floating point coordinate. 
+
+properties:
+x: f32,
+y: f32,
+z: f32,

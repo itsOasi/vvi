@@ -1,50 +1,37 @@
 use std::vec::Vec;
+pub mod base;
+pub mod world;
+pub mod particles;
+pub use base::{Triple, DictEntry, Base};
+pub use world::World;
 
-
-pub struct DictEntry<T>{
-    key: String,
-    value: T
-}
-impl<T> DictEntry<T>{
-    fn new(key:String, value: T)->Self{
-        Self{key, value}
-    }
-}
-
-pub struct Base{
-    /*
-        a base holds initial information and metadata about objects
-    */
-    id: String, // for use within the model
-    origin: Triple, // origin in global space prior to transformations
-    position: Triple, // position in local space after transformations
-
-}
-
-impl Base {
-    pub fn new(id: String, origin: Triple, position: Triple) -> Self{
-        Self{id, origin, position}
-    }
-}
-
-pub struct Triple{
-    x: f32,
-    y: f32,
-    z: f32,
-}
-
-impl Triple {
-    pub fn new(x: f32, y: f32, z: f32)->Self{
-        Self{x, y, z}
-    }
-    pub fn zero()->Self{
-        Self{x: 0.0, y: 0.0, z: 0.0}
-    }
-}
+use self::particles::Body;
 
 pub trait SimRunTime {
-        fn load(&mut self); // initializes simulation with data
-        fn step(&mut self); // advances simulation by one step
-        fn freeze(&mut self); // returns raw data in its current state
-        fn report(&self); // provides an overview of the simulation in human readable text
+    fn load(&mut self, data: String); // initializes simulation with data
+    fn step(&mut self, time: f32); // advances simulation by one step
+    fn freeze(&self, kwags: Vec<DictEntry<String>>) -> String; // returns raw data in its current state
+    fn report(&self); // provides an overview of the simulation in human readable text
+}
+
+pub trait Dynamics {
+    fn translate(body: Body){ // moves body irrespective to simulation
+
+    }
+    
+    fn force(body: Body){ // applies simulated force to body
+    
+    }
+}
+
+pub trait ColDetection{
+    fn detect_collisions(){}
+}
+
+pub trait ColHandling{
+    fn handle_collisions(){}
+}
+
+pub fn gen_id(prefix: String)->String{
+    prefix
 }

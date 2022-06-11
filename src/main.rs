@@ -1,7 +1,9 @@
-fn test(){
-    // load data into physics engine and run it
-    // pass data to rendering engine and run it
-    // gather data from rasterizer and show image
+fn test(data: String){
+    // instantiate physics world, nebulizer, and rasterizer
+    
+    // load data into world and run it
+    // pass data from world to nebulizer and run it
+    // rasterize nebulizer data and show image
 }
 
 fn main() {
