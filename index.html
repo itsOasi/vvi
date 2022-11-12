@@ -5,9 +5,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<script type="module" src="script.js"></script>
 </head>
 <body>
 	<canvas id="canvas"></canvas>
+	<script type="module">
+	  import {CanvasPainter, randomStrokeData} from "https://cdn.jsdelivr.net/gh/itsOasi/canvas_painter/canvasPainter.js";
+	  
+	  let draw = function(){
+	    let strokes = [];
+	    
+	    return strokes
+	  };
+	  
+	  let cp = new CanvasPainter("canvas", randomStrokeData)
+	  cp.play();
+	</script>
 </body>
 </html>
